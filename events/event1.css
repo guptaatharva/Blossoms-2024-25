@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+/* Hide scrollbar for all elements */
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.scroll-snap-card {
+    display: flex;
+    height: 100vh;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory; /* Horizontal scrolling by default */
+    overflow-x: auto;
+    
+}
+
+.scroll-snap-card .slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
+    z-index: 1;
+}
+
+.slide-info-container {
+    z-index: 2;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow-wrap: break-word; /* Ensure text wraps */
+    word-break: break-word; /* Force breaks for long words */
+    text-align: justify;
+}
+
+.event-main {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.event-sub {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.event-details {
+    font-size: 1.2em;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.event-details li::before {
+    content: '• ';
+    color: #ffd700;
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Tablet and small desktop screens */
+@media (max-width: 768px) {
+    .slide-info-container {
+        max-width: 95%;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .event-main {
+        font-size: 2em;
+    }
+
+    .event-sub {
+        font-size: 1.5em;
+    }
+
+    .event-details {
+        font-size: 1em;
+    }
+}
+
+/* Switch to vertical scroll below 627px */
+@media (max-width: 627px) {
+    .scroll-snap-card {
+        flex-direction: column; /* Stack slides vertically */
+        scroll-snap-type: y mandatory; /* Enable vertical snap */
+        overflow-y: auto; /* Enable vertical scrolling */
+        height: auto; /* Adjust height dynamically */
+        white-space: normal; /* Allow text wrapping */
+    }
+
+    .slide {
+        height: auto; /* Adjust height for content */
+        padding: 20px; /* Add padding for breathing room */
+    }
+
+    .slide-info-container {
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        gap: 10px;
+    }
+
+    .event-main {
+        font-size: 1.8em;
+    }
+
+    .event-sub {
+        font-size: 1.4em;
+    }
+
+    .event-details {
+        font-size: 0.9em;
+    }
+
+    .event-details li::before {
+        font-size: 1.2em;
+    }
+}
+
+#scroll-right-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+#scroll-right-btn:hover {
+    background-color: #f4c430;
+}
+
+#scroll-right-btn:active {
+    transform: scale(0.95);
+}
+/* back btn code to back to prev page */
+.back-btn{
+    background: rgba(255, 255, 255, 0.498);
+    border: none;
+    border-radius: 999px;
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    top: 3rem;
+    left: 4rem;
+    z-index: 9999;
+    cursor: pointer;
+}
+.back-btn > img{
+    height: 2rem;
+    width: 2rem;
+}
+.back-btn:hover{
+    background: white;
+    transition: 0.2s ease-in-out;
+}

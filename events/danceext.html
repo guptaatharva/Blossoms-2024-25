@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="event1.css">
+    <title>Dance Events</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+}
+
+.scroll-snap-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    background-image: url('../assets/eventsdance-event-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-info-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.event-main {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cta-button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e03e00;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .slide {
+        height: 500px;
+        padding: 10px;
+    }
+
+    .slide-info-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .event-main {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        height: 400px;
+        padding: 5px;
+    }
+
+    .slide-info-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .event-main {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <button onclick="history.back()" class="back-btn"><img width="50" src="../assets/images/left-arrow.png" alt=""></button>
+    <div class="scroll-snap-card">
+        <div class="slide"  style="background-image: url('../assets/events/dEx.png');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Inter Deanery Dance Extravaganza</h1>
+                <h2 class="event-sub">A Grand Dance Competition</h2>
+                <ul class="event-details">
+                    <li><span class="highlight">Date:</span> 24 January 2025 | <span class="highlight">Time:</span> 11:30 AM</li>
+                    <li><span class="highlight">Venue:</span> Block-I Quadrangle – Central Campus</li>
+                    <li><span class="highlight">Event Type:</span> Team Dance Performance</li>
+                    <li><span class="highlight">Participation:</span> 3 to 5 teams per deanery, 25 dancers minimum per team</li>
+                    <li><span class="highlight">Performance Time:</span> 7-8 minutes</li>
+                    <li><span class="highlight">Songs:</span> Indian movie/folk songs (Any language)</li>
+                    <li><span class="highlight">Props/Costumes:</span> Optional, but expenses borne by the team</li>
+                    <li><span class="highlight">Grading:</span> Based on dance performance and team spirit (Points: A - 50, B - 30, C - 20)</li>
+                </ul>
+                <p class="event-info">
+                    Registration Deadline: <span class="highlight">March 5, 2024</span> | Slots Assigned: <span class="highlight">March 12, 2024</span>
+                </p>
+                <a href="https://forms.gle/ADjYYYcNXtm3EPLT7" target="_blank">
+                    <button class="cta-button">Register Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

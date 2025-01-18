@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="event1.css">
+    <title>Art Events</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Light and dark theme styles */
+        body.light-theme {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        body.dark-theme {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .theme-toggle:hover {
+            background-color: #0056b3;
+        }
+        .slide-info-container:hover h2 {
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+        .back-btn{
+            background: none;
+            border: none;
+            position: absolute;
+            top: 3rem;
+            left: 4rem;
+            z-index: 9999;
+            cursor: pointer;
+        }
+        .back-btn:hover{
+            transform: translateX(-0.5rem);
+            transition: 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="history.back()" class="back-btn"><img width="50" src="../assets/images/left-arrow.png" alt=""></button>
+    <div class="scroll-snap-card">
+        
+        <!-- Photography -->
+        <div class="slide" style="background-image: url('../assets/events/camera-tripod-photographers-take-scenic-views-with-mountain-background_1257223-84552.avif');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Photography</h2>
+                <ul class="event-details">
+                    <li>Individual event.</li>
+                    <li>Themes will be announced 1 day prior to the event.</li>
+                    <li>Each student should submit 2 photos in JPEG format.</li>
+                    <li>Basic editing (cropping, color correction) is allowed, advanced editing is prohibited.</li>
+                    <li>Only DSLR photos are allowed.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Greeting Card Competition -->
+        <div class="slide" style="background-image: url('../assets/events/315522-1801x1245-printed-greeting-cards.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Greeting Card Competition</h2>
+                <ul class="event-details">
+                    <li>Individual event.</li>
+                    <li>Theme will be given on the spot.</li>
+                    <li>Stationary to be brought by participants.</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pencil Sketching -->
+        <div class="slide" style="background-image: url('../assets/events/pencil_cover.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Pencil Sketching</h2>
+                <ul class="event-details">
+                    <li>Individual event.</li>
+                    <li>Materials: Pencils, charcoal, and erasers only. No color media allowed.</li>
+                    <li>Sketching paper provided in finals.</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Reel Making -->
+        <div class="slide" style="background-image: url('../assets/events/instagram_reels-1024x576.webp');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Reel Making</h2>
+                <ul class="event-details">
+                    <li>Individual event.</li>
+                    <li>Maximum duration: 60 to 90 seconds.</li>
+                    <li>No explicit or vulgar content allowed.</li>
+                    <li>Theme given 1 day prior to the event.</li>
+                    <li>Only mobile phones and basic editing allowed (voiceovers and BGM).</li>
+                    <li>Shooting must be done within the campus.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Painting -->
+        <div class="slide" style="background-image: url('../assets/events/hq720.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Painting</h2>
+                <ul class="event-details">
+                    <li>Individual event.</li>
+                    <li>Theme given on the spot.</li>
+                    <li>Any type of paint allowed.</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Collage -->
+        <div class="slide" style="background-image: url('../assets/events/Collage-1440x1104.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Collage</h2>
+                <ul class="event-details">
+                    <li>Team event (4 members per team).</li>
+                    <li>Theme given on the spot.</li>
+                    <li>No mobile or internet allowed during the competition.</li>
+                    <li>Materials: Paper, magazines, glue, scissors, sketch pens/colors.</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pot Art -->
+        <div class="slide" style="background-image: url('../assets/events/photo-is-must-everyday-work-ai-generated-best-wonderful-photo_865967-1247484.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Pot Art</h2>
+                <ul class="event-details">
+                    <li>Individual event.</li>
+                    <li>Theme given on the spot.</li>
+                    <li>Glitter, mirror pieces, plaster of Paris, chalk powder, and sharp instruments are not allowed.</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mehndi Design -->
+        <div class="slide" style="background-image: url('../assets/events/114369937.png');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Mehndi Design</h2>
+                <ul class="event-details">
+                    <li>Team event (2 members: 1 artist, 1 model).</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Design should be creative and unique. No tattoo-like designs (stickers).</li>
+                    <li>Materials: Mehndi cones and other required materials to be brought by participants.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rangoli Design -->
+        <div class="slide" style="background-image: url('../assets/events/design-for-diwali-rangoli-1728453297509.webp');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Rangoli Design</h2>
+                <ul class="event-details">
+                    <li>Team event (4 members per team).</li>
+                    <li>Theme given on the spot.</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Materials: Participants must bring their own colored powders.</li>
+                    <li>Pre-drawn outlines and use of synthetic colors are prohibited.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Digital Poster Making -->
+        <div class="slide" style="background-image: url('../assets/events/section-3-poster-smaller.png');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Art Events</h1>
+                <h2 class="event-sub">Digital Poster Making</h2>
+                <ul class="event-details">
+                    <li>Individual event.</li>
+                    <li>Theme given on the spot.</li>
+                    <li>Time limit: 1 hour 30 minutes.</li>
+                    <li>Software: Any editing software like Adobe Photoshop, Canva, etc. Usage of AI tools is prohibited.</li>
+                    <li>Poster size: A4 in portrait format.</li>
+                    <li>Qualification: First and second winners from prelims advance to finals.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <button id="scroll-right-btn">Scroll Right</button>
+
+    <script>
+
+        const themeToggleBtn = document.querySelector('.theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('light-theme');
+        });
+
+        
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        const showSlide = (index) => {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        };
+
+        showSlide(currentSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            } else if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".slide");
+        const scrollContainer = document.querySelector(".scroll-snap-card");
+        const scrollRightBtn = document.getElementById("scroll-right-btn");
+        let currentSlide = 0;
+
+        function updateActiveSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateActiveSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateActiveSlide();
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                nextSlide();
+            } else if (event.key === "ArrowLeft") {
+                prevSlide();
+            }
+        });
+
+        slides.forEach(slide => {
+            slide.addEventListener("click", () => {
+                alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+            });
+        });
+
+        scrollRightBtn.addEventListener("click", () => {
+            scrollContainer.scrollBy({
+                left: scrollContainer.offsetWidth,
+                behavior: "smooth"
+            });
+        });
+
+        updateActiveSlide();
+    });
+    </script>
+</body>
+</html>

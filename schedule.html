@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule- Blossoms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Fleur+De+Leah&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- emilys -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Emilys+Candy&family=Fleur+De+Leah&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/logos/blossoms logo.png" type="image/x-icon" />
+    <style>
+        /* Additional styles for schedule section */
+        .schedule-section {
+            position: relative;
+            padding: 2rem 1rem;
+            background-color: rgba(246, 225, 214, 0.7);
+        }
+        .schedule-container {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .schedule-header {
+            text-align: center;
+            color: rgb(15, 141, 139);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: rgb(14, 66, 54);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .filter-btn.active {
+            background-color: rgb(15, 141, 139);
+        }
+        .event-list {
+            list-style-type: none;
+        }
+        .event-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(14, 66, 54, 0.2);
+        }
+        .event-name {
+            font-weight: bold;
+            color: rgb(15, 141, 139);
+        }
+        .event-time {
+            color: #333;
+        }
+        .schedule-section {
+        position: relative;
+        padding: 2rem 1rem;
+        background-color: rgba(246, 225, 214, 0.7);
+    }
+    .schedule-container {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .schedule-header {
+        text-align: center;
+        color: rgb(15, 141, 139);
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+    }
+    .schedule-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .schedule-image {
+        max-width: 100%;
+        max-height: 90vh; /* Increased from 80vh */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="hero">
+            <!-- Navbar (from original code) -->
+            <nav class="header">
+                <div><img height="50" src="./assets/logos/Christ Logo Color.png" alt=""></div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="https://forms.gle/ADjYYYcNXtm3EPLT7" target="_blank">Register</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+                <div class="sidebar" id="sidebar">
+                    <button class="sidebar-close" onclick="toggleSidebar()">✖</button>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="https://forms.gle/ADjYYYcNXtm3EPLT7" target="_blank">Register</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Schedule Section -->
+            <section class="schedule-section">
+                <div class="schedule-container">
+                    <h1 class="schedule-header">Blossoms Event Schedule</h1>
+                    
+                    <div class="schedule-image-container">
+                        <img src="assets/schedule blossoms.jpg" alt="Blossoms Event Schedule" class="schedule-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer (from original code) -->
+            <section class="footer">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <!-- Quick Links -->
+                        <div class="footer-column">
+                            <h4>Quick Links</h4>
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a href="events.html">Events</a>
+                            <a href="schedule.html">Schedule</a>
+                            <a href="https://forms.gle/ADjYYYcNXtm3EPLT7" target="_blank">Register</a>
+                            <a href="index.html#contact">Contact Us</a>
+                        </div>
+                        <!-- Resources -->
+                        <div class="footer-column">
+                            <h4>Resources</h4>
+                            <a href="https://christuniversity.in/" target="_blank">Christ University</a>
+                            <a href="https://christuniversity.in/academics/school-of-sciences" target="_blank">School of Sciences</a>
+                        </div>
+                        <!-- Social Media -->
+                        <div class="footer-column">
+                            <h4>Follow Us</h4>
+                            <a href="https://www.facebook.com/christ.university/" target="_blank">Facebook</a>
+                            <a href="https://www.instagram.com/blossoms_sos/" target="_blank">Instagram</a>
+                            <a href="https://christuniversity.in/" target="_blank">Website</a>
+                        </div>
+                    </div>
+            
+                    <div class="footer-motto">
+                        <h4>"Where creativity blossoms and talent thrives."</h4>
+                        <p>Join us in celebrating art, culture, and excellence at Blossoms - School of Sciences.</p>
+                        <div class="scroll-to-top">
+                            <center><img src="assets/logos/logo.png" alt="Scroll to Top" class="scroll-logo" onclick="scrollToTop()"></center>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="footer-bottom">
+                    <div class="social-icons">
+                        <a href="https://christuniversity.in/" target="_blank"><i class="fas fa-university"></i></a>
+                        <a href="https://www.facebook.com/christ.university/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/blossoms_sos/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>© 2025 Blossoms - School of Sciences | CHRIST (Deemed to be University)</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

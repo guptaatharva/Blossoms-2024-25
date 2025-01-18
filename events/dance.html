@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="event1.css">
+    <title>Dance Events</title>
+    <style>
+    .active {
+    outline: 4px solid gold;
+    transform: scale(1.05);
+    transition: transform 0.3s, outline 0.3s;
+    }
+    </style>
+</head>
+<body>
+    <button onclick="history.back()" class="back-btn"><img width="50" src="../assets/images/left-arrow.png" alt=""></button>
+    <div class="scroll-snap-card">
+
+        <!-- Indian Dance Classical (Solo) -->
+        <div class="slide" style="background-image: url('../assets/events/70.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Dance Events</h1>
+                <h2 class="event-sub">Indian Dance Classical (Solo)</h2>
+                <ul class="event-details">
+                    <li>Time: 4+1 minutes on stage.</li>
+                    <li>Song: Only authentic classical songs allowed, no mixing of songs.</li>
+                    <li>Music: No live music allowed, no film songs.</li>
+                    <li>Costumes: Authentic costumes, hairstyle, and jewelry representing the dance form.</li>
+                    <li>Qualification: First 2 winners of the prelims advance to finals.</li>
+                    <li>Deanery Rules: Deaneries with more than 5 participants to send 3 finalists.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Indian Dance Group: Non Theme (Film / Folk) -->
+        <div class="slide" style="background-image: url('../assets/events/a25021c9-b081-4c01-b824-5bb8eb8f62f9.webp');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Dance Events</h1>
+                <h2 class="event-sub">Indian Dance Group: Non Theme (Film / Folk)</h2>
+                <ul class="event-details">
+                    <li>Time: 5+1 minutes on stage.</li>
+                    <li>Music: Only Indian film songs allowed; no remixes or album songs.</li>
+                    <li>Team Size: Min 8 and max 15 members.</li>
+                    <li>Props: Minimum props allowed.</li>
+                    <li>Qualification: Top 3 winning teams of the prelims to advance to finals.</li>
+                    <li>Deanery Rules: Deaneries with more than 5 teams to send 3 finalists.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dance Duet -->
+        <div class="slide" style="background-image: url('../assets/events/Screen-Shot-2018-08-30-at-1.50.00-PM.png');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Dance Events</h1>
+                <h2 class="event-sub">Dance Duet</h2>
+                <ul class="event-details">
+                    <li>Time: 2+1 minutes on stage.</li>
+                    <li>Team: Team of 2 members.</li>
+                    <li>Music: Only Indian film songs allowed, mixing of up to 2 songs permitted.</li>
+                    <li>Props: No fire or water on stage.</li>
+                    <li>Qualification: First 2 winners of the prelims to advance to finals.</li>
+                    <li>Deanery Rules: Deaneries with more than 5 teams to send 3 finalists.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Folk Dance Duet -->
+        <div class="slide" style="background-image: url('../assets/events/public.avif');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Dance Events</h1>
+                <h2 class="event-sub">Folk Dance Duet</h2>
+                <ul class="event-details">
+                    <li>Time: 4+1 minutes on stage.</li>
+                    <li>Music: Only authentic folk songs allowed, no mixing of songs.</li>
+                    <li>Costumes: Authentic costumes, hairstyle, and jewelry representing the dance form.</li>
+                    <li>Qualification: First 2 teams will be selected for the finals.</li>
+                    <li>Deanery Rules: Deaneries with more than 5 teams to send 3 finalists.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Indian Classical Dance (Group) -->
+        <div class="slide" style="background-image: url('../assets/events/maxresdefault.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Dance Events</h1>
+                <h2 class="event-sub">Indian Classical Dance (Group)</h2>
+                <ul class="event-details">
+                    <li>Time: 6+1 minutes on stage.</li>
+                    <li>Team Size: Minimum 4 members and maximum 8 members per team.</li>
+                    <li>Music: Only authentic Indian classical songs allowed, no live music.</li>
+                    <li>Costumes: Authentic costumes, hairstyle, and jewelry representing the dance form.</li>
+                    <li>Qualification: Deaneries with more than 5 teams to send 3 finalists.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <button id="scroll-right-btn">Scroll Right</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
+
+            function updateActiveSlide() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle("active", index === currentSlide);
+                });
+            }
+    
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateActiveSlide();
+            }
+    
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateActiveSlide();
+            }
+    
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowRight") {
+                    nextSlide();
+                } else if (event.key === "ArrowLeft") {
+                    prevSlide();
+                }
+            });
+
+            slides.forEach(slide => {
+                slide.addEventListener("click", () => {
+                    alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+                });
+            });
+    
+
+            updateActiveSlide();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".slide");
+        const scrollContainer = document.querySelector(".scroll-snap-card");
+        const scrollRightBtn = document.getElementById("scroll-right-btn");
+        let currentSlide = 0;
+
+        function updateActiveSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateActiveSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateActiveSlide();
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                nextSlide();
+            } else if (event.key === "ArrowLeft") {
+                prevSlide();
+            }
+        });
+
+        slides.forEach(slide => {
+            slide.addEventListener("click", () => {
+                alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+            });
+        });
+
+        scrollRightBtn.addEventListener("click", () => {
+            scrollContainer.scrollBy({
+                left: scrollContainer.offsetWidth,
+                behavior: "smooth"
+            });
+        });
+
+        updateActiveSlide();
+    });
+    </script>
+    
+</body>
+</html>

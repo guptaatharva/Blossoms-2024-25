@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="event1.css">
+    <title>Music Events</title>
+    <style>
+    .active {
+    outline: 4px solid gold;
+    transform: scale(1.05);
+    transition: transform 0.3s, outline 0.3s;
+    }
+
+    </style>
+</head>
+<body>
+    <button onclick="history.back()" class="back-btn"><img width="50" src="../assets/images/left-arrow.png" alt=""></button>
+    <div class="scroll-snap-card">
+        <!-- Battle of Bands (Western) -->
+        <div class="slide" style="background-image: url('../assets/events/Firefly\ western\ Battle\ of\ musical\ bands\ with\ a\ drum\ and\ sticks;\ the\ focus\ on\ the\ light\ from\ front\ in.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Music Festival</h1>
+                <h2 class="event-sub">Battle of Bands (Western)</h2>
+                <ul class="event-details">
+                    <li>Time: 10+2 minutes (setup & clearance included).</li>
+                    <li>Minimum 5 and maximum 10 members per team.</li>
+                    <li>No backing tracks, samples, or sequences allowed.</li>
+                    <li>Standard 5-piece drum kit provided; no growling allowed.</li>
+                    <li>Individual prizes: Best Original Composition, Vocalist, Keyboardist, Guitarist, etc.</li>
+                    <li>Own compositions must submit lyrics in English for profanity check.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Acapella (Group) -->
+        <div class="slide" style="background-image: url('../assets/events/all-nighters-acapella.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Music Festival</h1>
+                <h2 class="event-sub">Acapella (Group)</h2>
+                <ul class="event-details">
+                    <li>Time: 10+2 minutes (setup & clearance included).</li>
+                    <li>Minimum 5 and maximum 10 members per team (including optional Beatboxer).</li>
+                    <li>No instruments or backup tracks allowed.</li>
+                    <li>Individual prizes: Best Original Composition, Arrangement, Vocalist, Beatboxer.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Indian Group -->
+        <div class="slide" style="background-image: url('../assets/events/20240714152140_classical-music-at-weddings.webp');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Music Festival</h1>
+                <h2 class="event-sub">Indian Group</h2>
+                <ul class="event-details">
+                    <li>Time: 10+2 minutes (setup & clearance included).</li>
+                    <li>Team size: 5-10 members with at least one Indian melodic or percussion instrument.</li>
+                    <li>Performances must be in any Indian language.</li>
+                    <li>No growling, pre-recorded music, or samples allowed.</li>
+                    <li>Own compositions require lyrics and translation for vulgarity check.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Indian Folk and Film Singing (Solo) -->
+        <div class="slide" style="background-image: url('../assets/events/Firefly\ A\ solo\ performer\ passionately\ singing\ on\ stage\,\ dressed\ in\ a\ traditional\ Indian\ outfit\ refle.jpg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Music Festival</h1>
+                <h2 class="event-sub">Indian Folk and Film Singing (Solo)</h2>
+                <ul class="event-details">
+                    <li>Time: 4+1 minutes.</li>
+                    <li>One accompanist allowed with acoustic guitar or Indian percussion instruments.</li>
+                    <li>No sequenced beats, samples, or backing tracks allowed.</li>
+                    <li>Lyrics must be appropriate, grooming to meet University conduct.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Western Singing (Solo) -->
+        <div class="slide" style="background-image: url('../assets/events/1728332200855.jpeg');">
+            <div class="slide-info-container">
+                <h1 class="event-main">Music Festival</h1>
+                <h2 class="event-sub">Western Singing (Solo)</h2>
+                <ul class="event-details">
+                    <li>Time: 4+1 minutes.</li>
+                    <li>One accompanist allowed with acoustic guitar or western acoustic percussion instruments.</li>
+                    <li>No sequenced beats, samples, or backing tracks allowed.</li>
+                    <li>Best Original Composition award available.</li>
+                    <li>Lyrics must be appropriate, grooming to meet University conduct.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button id="scroll-right-btn">Scroll Right</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
+    
+            // Function to update the active slide
+            function updateActiveSlide() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle("active", index === currentSlide);
+                });
+            }
+    
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateActiveSlide();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateActiveSlide();
+            }
+    
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowRight") {
+                    nextSlide();
+                } else if (event.key === "ArrowLeft") {
+                    prevSlide();
+                }
+            });
+    
+
+            slides.forEach(slide => {
+                slide.addEventListener("click", () => {
+                    alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+                });
+            });
+
+            updateActiveSlide();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".slide");
+        const scrollContainer = document.querySelector(".scroll-snap-card");
+        const scrollRightBtn = document.getElementById("scroll-right-btn");
+        let currentSlide = 0;
+
+        function updateActiveSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateActiveSlide();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateActiveSlide();
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                nextSlide();
+            } else if (event.key === "ArrowLeft") {
+                prevSlide();
+            }
+        });
+
+        slides.forEach(slide => {
+            slide.addEventListener("click", () => {
+                alert(`You clicked on: ${slide.querySelector(".event-sub").textContent}`);
+            });
+        });
+
+        scrollRightBtn.addEventListener("click", () => {
+            scrollContainer.scrollBy({
+                left: scrollContainer.offsetWidth,
+                behavior: "smooth"
+            });
+        });
+
+        updateActiveSlide();
+    });
+    </script>
+    
+</body>
+</html>

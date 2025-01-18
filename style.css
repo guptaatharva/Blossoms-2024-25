@@ -1,0 +1,1143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Emilys Candy",serif;
+}
+body{
+    body {
+        width: 100%; /* Remove 100svw */
+        min-height: 100vh; /* Ensure it grows with content */
+        overflow: auto;
+    }
+    background: linear-gradient(to right, 
+              #d9b8a8, /* Darker version of #f6e1d6 */
+              #f6e1d6, /* Middle */
+              #d9b8a8 /* Darker version of #f6e1d6 */
+              );
+}
+/* Reset margins and padding globally */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure proper structure for the header */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+/*     position: fixed; */ /* Keep it fixed to the top if required */
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    /* background-color: #a37a73; Add background to avoid transparency */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); Optional: Add slight shadow for clarity */
+}
+
+/* Navigation links structure */
+.header > ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.header > ul > li > a {
+    text-decoration: none;
+    color: #333; /* Ensure consistent text color */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header > ul > li > a:hover,
+.header > ul > li > a:focus {
+    transform: scale(1.1);
+    color: #555; /* Slightly darker hover effect */
+}
+
+/* Ensure the nav bar stays aligned properly */
+nav.header {
+    width: 100%; /* Stretch across the viewport */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Adjust layout for links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem; /* Ensure spacing between links */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+    transform: scale(1.1);
+    color: #555;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 9999;
+    padding-top: 60px;
+    display: none; /* Hide sidebar by default */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 8px 16px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    background: #f6e1d6;
+    border-radius: 50%; 
+    width: 3rem; 
+    height: 3rem;
+    text-align: center; 
+    line-height: 3rem; 
+    border: 2px solid #333;
+    color: #333;
+    z-index: 1002; 
+    position: fixed; 
+    right: 2rem; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; 
+}
+
+
+/* Sidebar close button */
+.sidebar-close {
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: block; /* Show sidebar on small screens */
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    .sidebar-toggle {
+        display: block; /* Show toggle button on small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide original nav links on small screens */
+    }
+}
+
+#contact {
+    scroll-margin-top: 100px; /* Adjust according to the height of your navbar */
+}
+  
+/* Landing Section------------------------------- */
+.hero {
+    position: relative;
+    /* height: 100vh; */
+    padding: 5rem 0;
+    margin: 0 auto;
+}
+.title-text {
+    font-size: 3.6rem;
+    position: relative;
+    color: rgb(15, 141, 139);
+    padding: 20px;
+    text-align: center;
+    animation: popup 2s ;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+/* Link inside the .register container */
+.register > a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    background: rgb(14, 66, 54);
+    color: #f6e1d6;
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid rgb(228, 234, 233);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* To hide ripple and ::before effects */
+    transition: all 0.3s ease;
+}
+
+/* Centering the register button container */
+.register {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Hover effect for glowing animation */
+.register > a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.6s ease;
+    z-index: 0;
+}
+
+.register > a:hover::before {
+    left: 100%;
+}
+
+/* Underline growing animation */
+.register > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #04fa93;
+    transition: width 0.3s ease;
+    z-index: 1;
+}
+
+.register > a:hover::after {
+    width: 100%;
+}
+
+/* Elevation and shadow effects on hover */
+.register > a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register > a:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ripple Effect */
+.register > a span {
+    position: relative;
+    z-index: 1;
+}
+
+.register > a .ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* Keyframes for ripple animation */
+@keyframes ripple {
+    to {
+        transform: scale(20);
+        opacity: 0;
+    }
+}
+
+/* JS to trigger the ripple effect (if not already implemented) */
+
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+@keyframes popup {
+    0%{
+        font-size: 2.7rem;
+        opacity: 0;
+    }
+    50%{
+        font-size: 3.5rem;
+    }
+}
+/* Flower Group */
+.flowergroup {
+    position: fixed;
+    display: flex;
+    height: 120px;
+    width: 100%;
+    overflow-x: hidden;
+    pointer-events: none; /* Prevent blocking user interaction */
+    z-index: 999;
+}
+
+.flowergroup.top {
+    top: 0;
+    rotate: 180deg;
+    animation: springInUp 1.7s ease-out forwards;
+}
+.flowergroup.bottom {
+    bottom: 0;
+    animation: springInUp 1.7s ease-out forwards;
+}
+
+/* Ensure the flower images are behind the nav bar */
+.flowergroup .flower {
+    position: relative;
+    z-index: 1;
+}
+
+/* Bloom Animation */
+@keyframes springInUp {
+    0% {
+        transform: translateY(100px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+
+}
+/* floating imges */
+.floating-img{
+    position: absolute;
+    width: 350px;
+    /* border-radius: 30px; */
+}
+.image-1{
+    top: 20%;
+    right: -70px;
+}
+.image-2{
+    top: 40%;
+    right: -40px;
+}
+.image-3{
+    top: 60%;
+    right: 0px;
+}
+
+.image-4{
+    top: 20%;
+    left: 0px;
+}
+.image-5{
+    top: 40%;
+    left: 0px;
+}
+.image-6{
+    top: 56%;
+    left: 0px;
+}
+/* sections */
+section{
+    /* height: 100svh; */
+    min-height: auto;
+}
+ /* Main Content Section------------------------------------------------- */ 
+.content-wrapper {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    gap: 3rem;
+    /* flex-wrap: wrap; */
+}
+.main-content > h2{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    /* padding: 0 5%; */
+}
+.content-wrapper > p{
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    text-align: justify;
+}
+.video{
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+.rounded-video {
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+/* prize section======================================================= */
+.prize-section{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.prize-section > h1{
+    font-size: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+.prize{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.prize-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.prize-card > h3{
+    font-size: 2rem;
+}
+@media (max-width: 768px) {
+    .prize{
+        flex-direction: column;
+    }
+}
+/* event content section--------------------------------------------- */
+.event-content > h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 1rem;
+    color: #333;
+}
+.event-links{
+    width: 600px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.event-links > a{
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: rgb(2, 91, 2);
+    border: 3px solid rgb(0, 92, 0);
+}
+
+.event-links > a:hover{
+    background: rgb(0, 57, 0);
+    color: white;
+
+}
+.event-links > a > img{
+    height: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .event-links{
+        width: 80%;
+    }
+    .event-links > a{
+        padding: 1rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Cards Container */
+.event-card-container {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+}
+
+/* Cards */
+/* Event Card Styling */
+.event-card {
+    background: rgb(161, 105, 105);
+    color: white;
+    border-radius: 1rem;
+    text-align: center;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-size: cover;
+}
+
+/* Event Title */
+.event-title {
+    position: absolute;
+    background: rgb(56, 53, 53);
+    width: 100%;
+    top: 0rem;
+    font-size: 1.4rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+.event-card > p{
+    position: absolute;
+    bottom: 0;
+    padding: 0.4rem;
+    color: rgb(193, 193, 193);
+    background: black;
+    width: 100%;
+}
+/* Overlay for Event List */
+.event-card .event-list {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+    list-style: none;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.event-card .event-list li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    width: 80%;
+}
+.event-list > h5{
+    border-bottom: 2px solid orange;
+    width: 100%;
+    padding-bottom: 0.3rem;
+    margin: 0.5rem;
+}
+/* Hover Effect */
+.event-card:hover .event-list {
+    opacity: 1; /* Show overlay on hover */
+    pointer-events: auto; /* Enable interaction */
+}
+
+.event-title {
+    position: absolute;
+    background: rgb(56, 53, 53);
+    width: 100%;
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    bottom: 2rem;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
+    height: 3rem; 
+    line-height: 3rem; 
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    text-overflow: ellipsis; /* Add "..." for overflowed text */
+    white-space: nowrap; 
+    padding: 0 1rem; 
+    box-sizing: border-box; 
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .event-card-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row for tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .event-card-container {
+        grid-template-columns: repeat(3, 1fr); /* 6 cards per row for large screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .event-card-container {
+        grid-template-columns: 1fr; /* Vertical layout for mobile screens */
+        width: 80%;
+    }
+    .event-content > h2{
+        font-size: 2.5rem;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .title-text {
+        font-size: 3rem;
+    }
+    .title-text > p{
+        font-size: 2rem;
+    }
+    .title-text > img{
+        width: 140px;
+    }
+    .register > a{
+        font-size: 1.5rem;
+    }
+    .content-wrapper {
+        padding: 1rem;
+        width: 90%;
+        flex-direction: column;
+    }
+    .video{
+        width: 100%;
+    }
+    .content-wrapper > p{
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .header > ul{
+        display: none;
+    }
+}
+
+.footer
+{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid black;
+    z-index: 10;
+    
+}
+.footer .scroll-to-top {
+    margin-bottom: 15px;
+    padding-top: 75px;
+    align-self: center;
+}
+
+.footer .scroll-logo {
+    height: 50px;
+    width: auto;
+    cursor: pointer; /* Add a pointer cursor to indicate the image is clickable */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.footer .scroll-logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+.logo1 {
+    width: 150px;
+    cursor: pointer;
+    padding-bottom: -20px;
+    justify-content: center;
+}
+
+
+.icons {
+    display: flex; /* Ensures icons are aligned horizontally */
+    gap: 10px; /* Adds spacing between icons */
+    align-items: center;
+    justify-content: center;
+}
+
+.icons a {
+    text-decoration: none; /* Removes the underline */
+}
+
+.icons img {
+    height: 50px; /* Ensures uniform height */
+    width: 50px; /* Ensures uniform width */
+    transition: transform 0.2s ease; /* Adds a hover effect */
+}
+
+.icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* for about page content */
+.about {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0 auto; 
+    padding: 2rem;
+    padding-top:25rem;
+    padding-bottom:30rem;
+
+}
+
+.about h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about p {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    color: #555; 
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+
+
+    .team-section {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        color: white;
+        padding: 50px;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .team-section h1 {
+        margin-bottom: 20px;
+        font-size: 3rem;
+        color: #00aaff;
+    }
+
+    /* Carousel Wrapper Styling */
+    .carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Team Members Carousel */
+    .team-carousel {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        gap: 40px;
+        animation: slide 15s linear infinite; /* Auto slide effect */
+        transition: transform 0.5s linear; /* Smooth scrolling */
+        will-change: transform; /* Optimize animation */
+    }
+
+    .team-carousel:hover {
+        animation-play-state: paused;
+    }
+
+    /* Individual Team Member */
+    .team-member {
+        background: #fff;
+        color: #333;
+        width: calc(90vw / 2.5); /* Dynamically resize for small screens */
+        max-width: 250px; /* Limit maximum size */
+        min-width: 150px; 
+        height: auto;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        flex-shrink: 0;
+        flex: 0 0 auto;
+    }
+
+    .team-member img {
+        width: 80px; /* Smaller image size for mobile */
+        height: 80px;
+        border-radius: 50%; /* Keeps the circular shape */
+        margin-bottom: 10px;
+    }
+
+    .team-member:hover {
+        transform: scale(1.2); /* Zoom out slightly */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Enhance the shadow for focus */
+        z-index: 10; /* Bring the hovered element to the front */
+        opacity: 1; /* Ensure full visibility */
+    }
+
+    /* Auto-slide animation */
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%); /* Slide completely to the left */
+        }
+    }
+
+    /* Auto-slide animation */
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%); /* Slide completely to the left */
+        }
+    }
+
+    /* Infinite Scroll Setup: Duplicate the team members */
+    .team-carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .team-carousel .team-member {
+        flex: 0 0 auto;
+    }
+
+    .team-carousel .team-member:nth-child(odd) {
+        background-color: #ffffff; /* Odd member styling */
+    }
+
+
+/* Footer Section */
+.footer {
+    background: rgb(161, 105, 105);
+    color: #ffffff; /* White text */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f6e1d6;
+}
+
+.footer-column a {
+    display: block;
+    text-decoration: none;
+    color: #f6e1d6;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ffcc33; /* Highlight color */
+}
+
+.footer-subscribe {
+    max-width: 300px;
+}
+
+.footer-subscribe h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-subscribe input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-subscribe button {
+    background-color: #ffcc33; /* Highlight color */
+    color: #013220;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-subscribe button:hover {
+    background-color: #f6e1d6; /* Light beige hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #f6e1d6;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #ffcc33; /* Highlight color */
+}
+
+.footer-bottom p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f6e1d6;
+    margin-bottom:100px;
+}
+
+
+
+/*******************************/
+.animated-box {
+    max-width: fit-content;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    border-radius: 20px;
+    animation: pulsate 3s infinite;
+    margin: 50px auto; 
+    text-align: center;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+#countdown {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* web dev team */
+/* General section styling */
+.web-dev-team-section {
+    background-color: #f6e1d6;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.web-dev-team-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+/* Team leads and members shared styling */
+.team-leads, .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+/* Shared card styling */
+.team-lead-card, .team-member-card {
+    background-color: white;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Hover effects for both leads and members */
+.team-lead-card:hover, .team-member-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image styling */
+.team-lead-card img, .team-member-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: filter 0.3s ease;
+}
+
+/* Blur effect on hover */
+.team-lead-card:hover img, .team-member-card:hover img {
+    filter: blur(4px);
+}
+
+/* LinkedIn button wrapper */
+.linkedin-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show LinkedIn button on hover */
+.team-lead-card:hover .linkedin-wrapper, 
+.team-member-card:hover .linkedin-wrapper {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* LinkedIn button styling */
+.linkedin {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077b5;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Ripple effect styling */
+.linkedin .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.linkedin:active .ripple {
+    animation: ripple-animation 0.6s ease-out;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .team-leads, .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-lead-card, .team-member-card {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-lead-card, .team-member-card {
+        width: 100%;
+    }
+
+    .web-dev-team-section h1 {
+        font-size: 2rem;
+    }
+}
